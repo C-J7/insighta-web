@@ -1,8 +1,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: 'https://profile-me-api.vercel.app/',
     withCredentials: true, 
+    headers: {
+        'X-API-Version': '1'
+    }
 });
 
 // Handle 401s for silent refresh or logout
