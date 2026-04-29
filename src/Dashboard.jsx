@@ -157,9 +157,9 @@ export default function Dashboard() {
                     {activeTab === 'account' && (
                         <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', border: '1px solid #ccc' }}>
                             <h3>My Account</h3>
-                            <p style={{ fontSize: '18px', marginTop: '10px' }}><strong>Username:</strong> @{user.username}</p>
-                            <p style={{ fontSize: '18px' }}><strong>System Role:</strong> {user.role.toUpperCase()}</p>
-                            <p style={{ marginTop: '20px', color: '#64748b' }}>As an {user.role}, your permissions are strictly enforced by the backend RBAC system.</p>
+                            <p style={{ fontSize: '18px', marginTop: '10px' }}><strong>Username:</strong> @{user?.username || 'user'}</p>
+                            <p style={{ fontSize: '18px' }}><strong>System Role:</strong> {user?.role?.toUpperCase() || 'ANALYST'}</p>
+                            <p style={{ marginTop: '20px', color: '#64748b' }}>As an {user?.role || 'analyst'}, your permissions are strictly enforced by the backend RBAC system.</p>
                             <button onClick={handleLogout} style={{ marginTop: '20px', backgroundColor: '#ef4444' }}>Log Out</button>
                         </div>
                     )}
